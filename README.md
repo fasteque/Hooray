@@ -1,4 +1,4 @@
-Hooray [![Build Status](https://travis-ci.org/fasteque/Horray.svg?branch=master)](https://travis-ci.org/fasteque/Horray)
+Hooray [![Build Status](https://travis-ci.org/fasteque/Hooray.svg?branch=master)](https://travis-ci.org/fasteque/Hooray)
 ================
 
 For any comment, feedback or if you would like to help, please write to daniele.altomare@gmail.com.
