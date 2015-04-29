@@ -1,17 +1,25 @@
-package com.fasteque.hooray;
+package com.fasteque.hooray.activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.fasteque.hooray.R;
+import com.fasteque.hooray.presenters.FixturesPresenter;
+import com.fasteque.hooray.views.FixturesView;
 
-public class FixturesActivity extends AppCompatActivity {
+
+public class FixturesActivity extends AppCompatActivity implements FixturesView {
+    private FixturesPresenter fixturesPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fixtures);
+
+        fixturesPresenter = new FixturesPresenter(this);
     }
 
     @Override
@@ -30,5 +38,10 @@ public class FixturesActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
     }
 }
