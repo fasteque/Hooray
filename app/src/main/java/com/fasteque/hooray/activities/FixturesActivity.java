@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,7 +13,7 @@ import com.fasteque.hooray.presenters.FixturesPresenter;
 import com.fasteque.hooray.views.FixturesView;
 
 
-public class FixturesActivity extends AppCompatActivity implements FixturesView {
+public class FixturesActivity extends BaseActivity implements FixturesView {
     private FixturesPresenter fixturesPresenter;
 
     @Override

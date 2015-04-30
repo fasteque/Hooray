@@ -2,7 +2,6 @@ package com.fasteque.hooray.activities;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.fasteque.hooray.fragments.AboutFragment;
@@ -10,7 +9,7 @@ import com.fasteque.hooray.fragments.AboutFragment;
 /**
  * Created by danielealtomare on 30/04/15.
  */
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
