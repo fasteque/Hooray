@@ -33,11 +33,17 @@ public class FixturesActivity extends AppCompatActivity implements FixturesView 
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fixturesPresenter.onResume();
     }
 
     @Override

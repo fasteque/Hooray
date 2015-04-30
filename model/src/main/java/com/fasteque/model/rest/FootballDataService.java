@@ -36,8 +36,9 @@ public class FootballDataService implements FootballDataSource {
     }
 
     public static FootballDataService getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new FootballDataService();
+        }
 
         return instance;
     }

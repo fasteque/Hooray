@@ -11,6 +11,6 @@ import rx.Observable;
  */
 public interface FootballDataApi {
     @GET("/fixtures")
-    public Observable<Fixtures>
+    Observable<Fixtures>
         getFixtures(@Query("timeFrame") String timeFrame);
 }
