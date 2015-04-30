@@ -1,6 +1,9 @@
 package com.fasteque.hooray.activities;
 
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -34,6 +37,7 @@ public class FixturesActivity extends AppCompatActivity implements FixturesView 
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            showAbout();
             return true;
         }
 
@@ -49,5 +53,14 @@ public class FixturesActivity extends AppCompatActivity implements FixturesView 
     @Override
     public Context getContext() {
         return this;
+    }
+
+    private void showAbout() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            startActivity(new Intent(this, AboutActivity.class), ActivityOptions
+                    .makeSceneTransitionAnimation(this).toBundle());
+        } else {
+            startActivity(new Intent(this, AboutActivity.class));
+        }
     }
 }
