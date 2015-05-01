@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,14 +13,23 @@ import com.fasteque.hooray.R;
 import com.fasteque.hooray.presenters.FixturesPresenter;
 import com.fasteque.hooray.views.FixturesView;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 
 public class FixturesActivity extends BaseActivity implements FixturesView {
     private FixturesPresenter fixturesPresenter;
+
+    @InjectView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fixtures);
+
+        ButterKnife.inject(this);
+        setSupportActionBar(toolbar);
 
         fixturesPresenter = new FixturesPresenter(this);
     }
