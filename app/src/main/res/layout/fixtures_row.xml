@@ -9,7 +9,7 @@
         android:layout_height="56dp" >
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/fixture_date"
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"

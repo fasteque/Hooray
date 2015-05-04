@@ -4,10 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.fasteque.hooray.R;
+import com.fasteque.hooray.common.utils.DateUtils;
 import com.fasteque.model.entities.Fixture;
 
 import java.util.ArrayList;
@@ -49,11 +49,13 @@ public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHo
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private TextView fixtureDate;
         private TextView homeTeam;
         private TextView awayTeam;
 
         public ViewHolder(View v) {
             super(v);
+            fixtureDate = (TextView) v.findViewById(R.id.fixture_date);
             homeTeam = (TextView) v.findViewById(R.id.home_team);
             awayTeam = (TextView) v.findViewById(R.id.away_team);
 
@@ -61,6 +63,7 @@ public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHo
         }
 
         public void bindFixture(Fixture fixture) {
+            fixtureDate.setText(DateUtils.getFormattedDateTime(fixture.getDate(), "h:mm a"));
             homeTeam.setText(fixture.getHomeTeamName());
             awayTeam.setText(fixture.getAwayTeamName());
         }
