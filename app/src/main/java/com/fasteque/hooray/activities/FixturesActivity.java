@@ -5,14 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.fasteque.hooray.R;
+import com.fasteque.hooray.adapters.FixturesAdapter;
 import com.fasteque.hooray.presenters.FixturesPresenter;
 import com.fasteque.hooray.views.FixturesView;
+import com.fasteque.model.entities.Fixtures;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -27,6 +30,8 @@ public class FixturesActivity extends BaseActivity implements FixturesView {
     @InjectView(R.id.recyclerView)
     RecyclerView recyclerView;
 
+    private FixturesAdapter fixturesAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,10 @@ public class FixturesActivity extends BaseActivity implements FixturesView {
 
         ButterKnife.inject(this);
         setSupportActionBar(toolbar);
+
+        fixturesAdapter = new FixturesAdapter();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(fixturesAdapter);
 
         fixturesPresenter = new FixturesPresenter(this);
     }
@@ -75,5 +84,9 @@ public class FixturesActivity extends BaseActivity implements FixturesView {
         } else {
             startActivity(new Intent(this, AboutActivity.class));
         }
+    }
+
+    public void displayFixtures(Fixtures fixtures) {
+        fixturesAdapter.insertFixtures(fixtures.getFixtures());
     }
 }

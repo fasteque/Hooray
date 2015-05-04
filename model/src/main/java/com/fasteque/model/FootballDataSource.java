@@ -8,5 +8,5 @@ import rx.Observable;
  * Created by danielealtomare on 27/04/15.
  */
 public interface FootballDataSource {
-    public Observable<Fixtures> getFixtures(String timeFrame);
+    Observable<Fixtures> getFixtures(String timeFrame);
 }
