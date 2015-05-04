@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" >
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:gravity="center"
+            android:padding="4dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:padding="4dp" >
+
+            <TextView
+                android:id="@+id/home_team"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/away_team"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?android:attr/selectableItemBackground" />
+</FrameLayout>
