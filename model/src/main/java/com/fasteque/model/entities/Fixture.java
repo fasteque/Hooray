@@ -13,12 +13,22 @@ public class Fixture {
         "awayTeamName":"Deportivo La Coruna",
         "result":{"goalsHomeTeam":-1,"goalsAwayTeam":-1}}
      */
+
+    private Links _links;
     private String date;
     private String status;
     private int matchday;
     private String homeTeamName;
     private String awayTeamName;
     private Result result;
+
+    public Links get_links() {
+        return _links;
+    }
+
+    public void set_links(Links _links) {
+        this._links = _links;
+    }
 
     public String getDate() {
         return date;
