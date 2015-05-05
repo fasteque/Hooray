@@ -1,6 +1,7 @@
 package com.fasteque.model.rest;
 
 import com.fasteque.model.FootballDataSource;
+import com.fasteque.model.entities.Fixture;
 import com.fasteque.model.entities.Fixtures;
 
 import retrofit.RequestInterceptor;
@@ -46,5 +47,10 @@ public class FootballDataService implements FootballDataSource {
     @Override
     public Observable<Fixtures> getFixtures(String timeFrame) {
         return footballDataApi.getFixtures(timeFrame);
+    }
+
+    @Override
+    public Observable<Fixture> getFixture(String fixtureId) {
+        return footballDataApi.getFixture(fixtureId);
     }
 }

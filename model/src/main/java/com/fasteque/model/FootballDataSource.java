@@ -1,5 +1,6 @@
 package com.fasteque.model;
 
+import com.fasteque.model.entities.Fixture;
 import com.fasteque.model.entities.Fixtures;
 
 import rx.Observable;
@@ -9,4 +10,5 @@ import rx.Observable;
  */
 public interface FootballDataSource {
     Observable<Fixtures> getFixtures(String timeFrame);
+    Observable<Fixture> getFixture(String fixtureId);
 }
