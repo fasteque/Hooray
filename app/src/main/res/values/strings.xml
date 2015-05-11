@@ -6,4 +6,6 @@
     <string name="pref_open_source_libs">Open Source Libraries</string>
     <string name="prefs_retrofit">Retrofit</string>
     <string name="prefs_rx_android">RxAndroid</string>
+
+    <string name="fixture_match_start">Match start</string>
 </resources>
