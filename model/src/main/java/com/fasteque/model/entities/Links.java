@@ -14,4 +14,36 @@ public class Links {
     private SoccerSeason soccerseason;
     private HomeTeam homeTeam;
     private AwayTeam awayTeam;
+
+    public Self getSelf() {
+        return self;
+    }
+
+    public void setSelf(Self self) {
+        this.self = self;
+    }
+
+    public SoccerSeason getSoccerseason() {
+        return soccerseason;
+    }
+
+    public void setSoccerseason(SoccerSeason soccerseason) {
+        this.soccerseason = soccerseason;
+    }
+
+    public HomeTeam getHomeTeam() {
+        return homeTeam;
+    }
+
+    public void setHomeTeam(HomeTeam homeTeam) {
+        this.homeTeam = homeTeam;
+    }
+
+    public AwayTeam getAwayTeam() {
+        return awayTeam;
+    }
+
+    public void setAwayTeam(AwayTeam awayTeam) {
+        this.awayTeam = awayTeam;
+    }
 }
