@@ -1,9 +1,12 @@
 package com.fasteque.hooray.presenters;
 
+import android.util.Log;
+
 import com.fasteque.domain.GetFixturesUseCase;
 import com.fasteque.domain.GetFixturesUseCaseController;
 import com.fasteque.hooray.activities.FixturesActivity;
 import com.fasteque.hooray.views.FixturesView;
+import com.fasteque.model.entities.Fixture;
 import com.fasteque.model.entities.Fixtures;
 
 import rx.Observer;
@@ -49,5 +52,9 @@ public class FixturesPresenter implements Presenter {
                         ((FixturesActivity) fixturesView).displayFixtures(fixtures);
                     }
                 });
+    }
+
+    public void displayFixture(String fixtureId) {
+        Log.d("Hooray", "fixtureId: " + fixtureId);
     }
 }

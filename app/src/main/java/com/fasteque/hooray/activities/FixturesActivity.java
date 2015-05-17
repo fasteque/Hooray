@@ -10,15 +10,20 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.fasteque.hooray.R;
 import com.fasteque.hooray.adapters.FixturesAdapter;
 import com.fasteque.hooray.presenters.FixturesPresenter;
 import com.fasteque.hooray.views.FixturesView;
+import com.fasteque.model.entities.Fixture;
 import com.fasteque.model.entities.Fixtures;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import rx.android.view.ViewObservable;
+import rx.functions.Action1;
+import rx.functions.Func1;
 
 
 public class FixturesActivity extends BaseActivity implements FixturesView {
@@ -41,6 +46,26 @@ public class FixturesActivity extends BaseActivity implements FixturesView {
         setSupportActionBar(toolbar);
 
         fixturesAdapter = new FixturesAdapter();
+        ViewObservable.bindView(recyclerView, fixturesAdapter.onClickFixture())
+                .map(new Func1<View, Fixture>() {
+                    @Override
+                    public Fixture call(View view) {
+                        return fixturesAdapter.getFixtureAtPosition(recyclerView.getChildLayoutPosition(view));
+                    }
+                })
+                .map(new Func1<Fixture, String>() {
+                    @Override
+                    public String call(Fixture fixture) {
+                        return fixture.get_links().getSelf().getHref().replaceFirst(".*/([^/?]+).*", "$1");
+                    }
+                })
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String s) {
+                        fixturesPresenter.displayFixture(s);
+                    }
+                });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(fixturesAdapter);
 
@@ -87,6 +112,7 @@ public class FixturesActivity extends BaseActivity implements FixturesView {
     }
 
     public void displayFixtures(Fixtures fixtures) {
+        // FIXME
         fixturesAdapter.insertFixtures(fixtures.getFixtures());
     }
 }

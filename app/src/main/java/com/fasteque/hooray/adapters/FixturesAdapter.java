@@ -13,10 +13,17 @@ import com.fasteque.model.entities.Fixture;
 import java.util.ArrayList;
 import java.util.List;
 
+import rx.Observable;
+import rx.android.view.OnClickEvent;
+import rx.android.view.ViewObservable;
+import rx.functions.Func1;
+import rx.subjects.PublishSubject;
+
 /**
  * Created by danielealtomare on 04/05/15.
  */
 public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHolder> {
+    private PublishSubject<View> fixtureId = PublishSubject.create();
     ArrayList<Fixture> fixtures = new ArrayList<>();
 
     @Override
@@ -24,8 +31,18 @@ public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHo
         View view = LayoutInflater.
                 from(parent.getContext()).
                 inflate(R.layout.fixtures_row, parent, false);
+        ViewHolder viewHolder = new ViewHolder(view);
 
-        return new ViewHolder(view);
+        ViewObservable.bindView(parent, ViewObservable.clicks(view))
+                .map(new Func1<OnClickEvent, View>() {
+                    @Override
+                    public View call(OnClickEvent onClickEvent) {
+                        return onClickEvent.view();
+                    }
+                })
+                .subscribe(fixtureId);
+
+        return viewHolder;
     }
 
     @Override
@@ -48,7 +65,7 @@ public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHo
         appendFixtures(fixtures);
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    protected class ViewHolder extends RecyclerView.ViewHolder {
         private TextView fixtureDate;
         private TextView homeTeam;
         private TextView awayTeam;
@@ -58,8 +75,6 @@ public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHo
             fixtureDate = (TextView) v.findViewById(R.id.fixture_date);
             homeTeam = (TextView) v.findViewById(R.id.home_team);
             awayTeam = (TextView) v.findViewById(R.id.away_team);
-
-            v.setOnClickListener(this);
         }
 
         public void bindFixture(Fixture fixture) {
@@ -67,10 +82,17 @@ public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHo
             homeTeam.setText(fixture.getHomeTeamName());
             awayTeam.setText(fixture.getAwayTeamName());
         }
+    }
 
-        @Override
-        public void onClick(View v) {
+    public Observable<View> onClickFixture() {
+        return fixtureId;
+    }
 
+    public Fixture getFixtureAtPosition(int position) {
+        if(fixtures.size() > 0 && position < fixtures.size()) {
+            return fixtures.get(position);
+        } else {
+            return null;
         }
     }
 }
