@@ -33,6 +33,7 @@ public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHo
                 inflate(R.layout.fixtures_row, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
 
+        // Unsubscribe is automatically performed by bindView method.
         ViewObservable.bindView(parent, ViewObservable.clicks(view))
                 .map(new Func1<OnClickEvent, View>() {
                     @Override

@@ -46,6 +46,8 @@ public class FixturesActivity extends BaseActivity implements FixturesView {
         setSupportActionBar(toolbar);
 
         fixturesAdapter = new FixturesAdapter();
+
+        // Unsubscribe is automatically performed by bindView method.
         ViewObservable.bindView(recyclerView, fixturesAdapter.onClickFixture())
                 .map(new Func1<View, Fixture>() {
                     @Override
