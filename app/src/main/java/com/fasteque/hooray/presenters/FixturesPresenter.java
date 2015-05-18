@@ -6,7 +6,6 @@ import com.fasteque.domain.GetFixturesUseCase;
 import com.fasteque.domain.GetFixturesUseCaseController;
 import com.fasteque.hooray.activities.FixturesActivity;
 import com.fasteque.hooray.views.FixturesView;
-import com.fasteque.model.entities.Fixture;
 import com.fasteque.model.entities.Fixtures;
 
 import rx.Observer;
