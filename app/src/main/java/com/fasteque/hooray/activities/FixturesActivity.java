@@ -106,6 +106,7 @@ public class FixturesActivity extends BaseActivity implements FixturesView {
 
     private void showAbout() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            //noinspection unchecked
             startActivity(new Intent(this, AboutActivity.class), ActivityOptions
                     .makeSceneTransitionAnimation(this).toBundle());
         } else {
