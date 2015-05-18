@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.FixtureActivity" />
+
         <activity android:name=".activities.AboutActivity"
             android:theme="@style/AppThemeActionBar"
             android:label="@string/action_about" />
