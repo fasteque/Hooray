@@ -10,6 +10,7 @@ import com.fasteque.hooray.R;
 
 /**
  * Created by danielealtomare on 30/04/15.
+ * Project: Hooray
  */
 public abstract class BaseActivity extends AppCompatActivity {
     @Override

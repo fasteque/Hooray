@@ -6,6 +6,7 @@ import com.fasteque.hooray.views.FixtureView;
 
 /**
  * Created by danielealtomare on 05/05/15.
+ * Project: Hooray
  */
 public class FixturePresenter implements Presenter {
     private final FixtureView fixtureView;

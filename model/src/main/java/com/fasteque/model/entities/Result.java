@@ -2,6 +2,7 @@ package com.fasteque.model.entities;
 
 /**
  * Created by danielealtomare on 26/04/15.
+ * Project: Hooray
  */
 public class Result {
     /*

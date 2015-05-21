@@ -21,6 +21,7 @@ import rx.subjects.PublishSubject;
 
 /**
  * Created by danielealtomare on 04/05/15.
+ * Project: Hooray
  */
 public class FixturesAdapter extends RecyclerView.Adapter<FixturesAdapter.ViewHolder> {
     private PublishSubject<View> fixtureId = PublishSubject.create();

@@ -7,6 +7,7 @@ import rx.Observable;
 
 /**
  * Created by danielealtomare on 05/05/15.
+ * Project: Hooray
  */
 public class GetFixtureUseCaseController implements GetFixtureUseCase {
     private FootballDataService footballDataService = FootballDataService.getInstance();

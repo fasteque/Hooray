@@ -8,6 +8,7 @@ import com.fasteque.hooray.fragments.AboutFragment;
 
 /**
  * Created by danielealtomare on 30/04/15.
+ * Project: Hooray
  */
 public class AboutActivity extends BaseActivity {
     @Override

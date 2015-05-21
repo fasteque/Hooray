@@ -7,6 +7,7 @@ import com.fasteque.hooray.R;
 
 /**
  * Created by danielealtomare on 30/04/15.
+ * Project: Hooray
  */
 public class AboutFragment extends PreferenceFragment {
 

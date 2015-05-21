@@ -10,6 +10,7 @@ import rx.Observable;
 
 /**
  * Created by danielealtomare on 27/04/15.
+ * Project: Hooray
  */
 public class FootballDataService implements FootballDataSource {
     private static final String FOOTBALL_DATA_ENDPOINT = "http://api.football-data.org/alpha";

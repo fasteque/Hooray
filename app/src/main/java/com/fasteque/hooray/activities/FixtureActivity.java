@@ -13,6 +13,7 @@ import butterknife.InjectView;
 
 /**
  * Created by danielealtomare on 05/05/15.
+ * Project: Hooray
  */
 public class FixtureActivity extends BaseActivity implements FixtureView {
     private FixturePresenter fixturePresenter;
