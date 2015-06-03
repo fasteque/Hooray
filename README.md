@@ -1,5 +1,8 @@
 Hooray [![Build Status](https://travis-ci.org/fasteque/Hooray.svg?branch=master)](https://travis-ci.org/fasteque/Hooray)
 ================
+This is a sample application mainly used to study and test new libraries or patterns.
+
+This is not production ready!
 
 For any comment, feedback or if you would like to help, please write to daniele.altomare@gmail.com.
 
