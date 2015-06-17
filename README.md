@@ -1,3 +1,7 @@
+DEPRECATED - code is no more updated or maintained.
+
+
+
 Hooray [![Build Status](https://travis-ci.org/fasteque/Hooray.svg?branch=master)](https://travis-ci.org/fasteque/Hooray)
 ================
 This is a sample application mainly used to study and test new libraries or patterns.
